@@ -1,0 +1,18 @@
+<div class="main">
+  <h1>Find the longest word</h1>
+
+  <div class="container">
+    <% @arr.each do |letter| %>
+      <h3><%= letter %></h3>
+    <% end %>
+  </div>
+  <br>
+  <p>What's the longest word you can find?</p>
+
+  <form action="/score" method="post">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <%= hidden_field_tag :arr, @arr %>
+    <input type="text" name="answer" placeholder="Type answer here">
+    <input type="submit" value="Submit answer">
+  </form>
+</div>
